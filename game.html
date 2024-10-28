@@ -80,6 +80,18 @@
                     computerScore++;
                 }
             }
+
+            //Print Total Score Tally and Winner
+            console.log(`Computer Score: ${computerScore}   Your Score: ${humanScore}`);
+            if (computerScore > humanScore) {
+                console.log('Computer Wins!');
+            }
+            else if (computerScore < humanScore) {
+                console.log('You Win!');
+            }
+            else {
+                console.log('Draw!');
+            }
             
         }
 
