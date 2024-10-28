@@ -60,19 +60,24 @@
             let computerScore = 0;
             let humanScore = 0;
 
-            //Test Winner and Increment Points
-            let humanChoice = getHumanChoice();
-            let computerChoice = getComputerChoice();
-            console.log(`Computer Choice: ${computerChoice}   Your Choice: ${humanChoice}`);
-            let result = playRound(humanChoice, computerChoice);
-                
-            //Return Result & Increment Score
-            if (result == 'human') {
-                humanScore++;
+            //Play for Five Rounds
+            for (let i = 0; i < 5; i++) {
+
+                //Test Winner and Increment Points
+                let humanChoice = getHumanChoice();
+                let computerChoice = getComputerChoice();
+                console.log(`Computer Choice: ${computerChoice}   Your Choice: ${humanChoice}`);
+                let result = playRound(humanChoice, computerChoice);
+                    
+                //Return Result & Increment Score
+                if (result == 'human') {
+                    humanScore++;
+                }
+                else if (result == 'computer') {
+                    computerScore++;
+                }
             }
-            else if (result == 'computer') {
-                computerScore++;
-            }
+            
         }
 
         playGame();
