@@ -11,13 +11,13 @@
         function getComputerChoice () {
             let ran = Math.floor(Math.random()*3);
             if (ran == 0) {
-                ran = 'rock';
+                ran = 'Rock';
             }
             else if (ran == 1) {
-                ran = 'paper';
+                ran = 'Paper';
             }
             else {
-                ran = 'scissors';
+                ran = 'Scissors';
             }
             return ran;
         }
@@ -25,16 +25,15 @@
         //Get Human Choice Function
         function getHumanChoice () {
             let move = prompt('Choose your move! (Rock/Paper/Scissors): ').toLowerCase();
-            if (move == 'rock' || move == 'paper' || move == 'scissors') {
+            move = move.charAt(0).toUpperCase() + move.substr(1);
+
+            if (move == 'Rock' || move == 'Paper' || move == 'Scissors') {
                 return move;
             }
             return 'Invalid Move! Try again.';
         }
 
-        //
-        function playRound (humanChoice, computerChoice) {
-
-        }
+        
 
         console.log(getHumanChoice());
 
