@@ -44,31 +44,38 @@
             else if ((humanChoice == 'Rock' && computerChoice == 'Scissors')
                   || (humanChoice == 'Scissors' && computerChoice == 'Paper')
                   || (humanChoice == 'Paper' && computerChoice == 'Rock')) {
-                    humanScore++;
-                    return console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
-                  }
+                    console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+                    return 'human';                   
+                }
+            //If Computer Wins
             else {
-                computerScore++;
-                return console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
+                console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
+                return 'computer';
             }
         }
 
-        //Score Tally Initialization
-        let computerScore = 0;
-        let humanScore = 0;
+        function playGame () {
 
-        //Test Winner and Increment Points
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        console.log(`Computer Choice: ${computerChoice}`);
-        console.log(`Your Choice: ${humanChoice}`);
-        playRound(humanChoice, computerChoice);
-        console.log(humanScore);
-        console.log(computerScore);
-        
+            //Score Tally Initialization
+            let computerScore = 0;
+            let humanScore = 0;
 
+            //Test Winner and Increment Points
+            let humanChoice = getHumanChoice();
+            let computerChoice = getComputerChoice();
+            console.log(`Computer Choice: ${computerChoice}   Your Choice: ${humanChoice}`);
+            let result = playRound(humanChoice, computerChoice);
+                
+            //Return Result & Increment Score
+            if (result == 'human') {
+                humanScore++;
+            }
+            else if (result == 'computer') {
+                computerScore++;
+            }
+        }
 
-
+        playGame();
 
     </script>
 </body>
