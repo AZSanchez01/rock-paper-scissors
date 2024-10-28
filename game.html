@@ -24,7 +24,11 @@
 
         //Get Human Choice Function
         function getHumanChoice () {
-            return prompt('Choose your move! (Rock/Paper/Scissors): ').toLowerCase();
+            let move = prompt('Choose your move! (Rock/Paper/Scissors): ').toLowerCase();
+            if (move == 'rock' || move == 'paper' || move == 'scissors') {
+                return move;
+            }
+            return 'Invalid Move! Try again.';
         }
 
         //
