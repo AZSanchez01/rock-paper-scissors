@@ -33,14 +33,42 @@
             return 'Invalid Move! Try again.';
         }
 
-        
+        //Simulate a Round
+        function playRound (humanChoice, computerChoice) {
 
-        console.log(getHumanChoice());
-
+            //If Draw
+            if (humanChoice == computerChoice) {
+                return console.log('Draw!');
+            }
+            // If Human Wins
+            else if ((humanChoice == 'Rock' && computerChoice == 'Scissors')
+                  || (humanChoice == 'Scissors' && computerChoice == 'Paper')
+                  || (humanChoice == 'Paper' && computerChoice == 'Rock')) {
+                    humanScore++;
+                    return console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+                  }
+            else {
+                computerScore++;
+                return console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
+            }
+        }
 
         //Score Tally Initialization
         let computerScore = 0;
         let humanScore = 0;
+
+        //Test Winner and Increment Points
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        console.log(`Computer Choice: ${computerChoice}`);
+        console.log(`Your Choice: ${humanChoice}`);
+        playRound(humanChoice, computerChoice);
+        console.log(humanScore);
+        console.log(computerScore);
+        
+
+
+
 
     </script>
 </body>
