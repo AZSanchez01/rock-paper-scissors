@@ -63,8 +63,11 @@
             //Play for Five Rounds
             for (let i = 0; i < 5; i++) {
 
-                //Test Winner and Increment Points
+                //Play round & Repeat human prompt if initial input is invalid
                 let humanChoice = getHumanChoice();
+                while (humanChoice == 'Invalid Move! Try again.') {
+                    humanChoice = getHumanChoice();
+                }
                 let computerChoice = getComputerChoice();
                 console.log(`Computer Choice: ${computerChoice}   Your Choice: ${humanChoice}`);
                 let result = playRound(humanChoice, computerChoice);
